@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Archlinux 安装记录</title>
+    <link href="/2023/07/06/Archlinux-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/"/>
+    <url>/2023/07/06/Archlinux-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>VMWare Workstation PRO 17</p><p>Archlinux</p><h1 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h1><h2 id="联网"><a href="#联网" class="headerlink" title="联网"></a>联网</h2><p>VMWare NAT模式连接，ping通即可开始安装。</p><h2 id="系统安装-1"><a href="#系统安装-1" class="headerlink" title="系统安装"></a>系统安装</h2><p><code>archinstall</code>脚本。</p><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><ul><li>tmux</li><li>vim</li><li>git</li><li>ranger</li><li>arandr</li><li>neofetch</li><li>openssh</li><li>btop</li><li>yay</li><li>zsh</li><li>xorg</li></ul><h1 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h1><h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p><a href="https://mirrors.shanghaitech.edu.cn/help/archlinux">上海科技大学开源镜像站-Archlinux源</a></p><p><a href="https://mirrors.shanghaitech.edu.cn/help/archlinuxcn">上海科技大学开源镜像站-Archlinuxcn源</a></p><h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p><a href="https://archlinux.org/packages/?name=adobe-source-code-pro-fonts">adobe-source-code-pro-fonts</a></p><p><a href="https://archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts">adobe-source-han-sans-cn-fonts</a></p><p><a href="https://aur.archlinux.org/packages/powerline-fonts-git">AUR (en) - powerline-fonts-git</a></p><h2 id="GRUB"><a href="#GRUB" class="headerlink" title="GRUB"></a>GRUB</h2><h3 id="GRUB主题"><a href="#GRUB主题" class="headerlink" title="GRUB主题"></a>GRUB主题</h3><p><a href="https://github.com/lfelipe1501/Atomic-GRUB2-Theme">Atomic-GRUB2-Theme</a></p><h3 id="GRUB分辨率"><a href="#GRUB分辨率" class="headerlink" title="GRUB分辨率"></a>GRUB分辨率</h3><p><a href="https://wiki.archlinuxcn.org/wiki/GRUB/%E6%8A%80%E5%B7%A7%E5%92%8C%E7%AA%8D%E9%97%A8#%E8%A7%86%E8%A7%89%E9%85%8D%E7%BD%AE">GRUB&#x2F;技巧和窍门 - Arch Linux 中文维基 (archlinuxcn.org)</a></p><h2 id="切换Shell"><a href="#切换Shell" class="headerlink" title="切换Shell"></a>切换Shell</h2><p>切换至zsh</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">chsh -s &lt;shell-name&gt;<br></code></pre></td></tr></table></figure><p>安装Oh My Zsh</p><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git/">ohmyzsh.git | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p><p>安装Oh My Zsh插件</p><p><a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-users&#x2F;zsh-autosuggestions: Fish-like autosuggestions for zsh (github.com)</a></p><p><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-users&#x2F;zsh-syntax-highlighting: Fish shell like syntax highlighting for Zsh. (github.com)</a></p><p><a href="https://github.com/zsh-users/zsh-completions">zsh-users&#x2F;zsh-completions: Additional completion definitions for Zsh. (github.com)</a></p><p>安装powerline字体</p><p><a href="https://github.com/powerline/fonts">powerline&#x2F;fonts: Patched fonts for Powerline users. (github.com)</a></p><p>修改主题：<code>ys</code></p><h1 id="窗口管理器"><a href="#窗口管理器" class="headerlink" title="窗口管理器"></a>窗口管理器</h1><h2 id="suckless-org"><a href="#suckless-org" class="headerlink" title="suckless.org"></a>suckless.org</h2><ul><li><a href="https://dwm.suckless.org/">dwm</a></li><li><a href="https://st.suckless.org/">st</a></li><li><a href="https://tools.suckless.org/dmenu/">dmenu</a></li></ul><p>组成日常使用环境。</p><h2 id="登陆时自动启动X"><a href="#登陆时自动启动X" class="headerlink" title="登陆时自动启动X"></a>登陆时自动启动X</h2><p><a href="https://wiki.archlinux.org/title/Xinit#Autostart_X_at_login">Autostart_X_at_login</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">.bashrc/.zshrc<br><span class="hljs-keyword">if</span> [ -z <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;DISPLAY&#125;</span>&quot;</span> ] &amp;&amp; [ <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;XDG_VTNR&#125;</span>&quot;</span> -eq 1 ]; <span class="hljs-keyword">then</span><br>  <span class="hljs-built_in">exec</span> startx<br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure><h1 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h1><h2 id="VIM主题"><a href="#VIM主题" class="headerlink" title="VIM主题"></a>VIM主题</h2><p><a href="https://github.com/sickill/vim-monokai/">sickill&#x2F;vim-monokai: Monokai color scheme for Vim converted from Textmate theme (github.com)</a></p><h2 id="VIM插件"><a href="#VIM插件" class="headerlink" title="VIM插件"></a>VIM插件</h2><p><a href="https://github.com/junegunn/vim-plug">junegunn&#x2F;vim-plug: :hibiscus: Minimalist Vim Plugin Manager (github.com)</a></p><p>coc.nvim需要安装<code>nodejs</code>包</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Learning</category>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Archlinux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HEXO推送至远程Git仓库时，自定义域名失效的解决方案</title>
+    <link href="/2023/07/02/HEXO%E6%8E%A8%E9%80%81%E8%87%B3%E8%BF%9C%E7%A8%8BGit%E4%BB%93%E5%BA%93%E6%97%B6%EF%BC%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <url>/2023/07/02/HEXO%E6%8E%A8%E9%80%81%E8%87%B3%E8%BF%9C%E7%A8%8BGit%E4%BB%93%E5%BA%93%E6%97%B6%EF%BC%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%A4%B1%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    
+    <content type="html"><![CDATA[<p>在使用Hexo的过程中发现如下问题，在Gitpage绑定了<a href="https://tentyou.top/">https://tentyou.top/</a>的情况下，每次deploy都会导致绑定的域名失效，需要手动重新绑定，而下次还会发生相同情况。<br>根据<a href="https://hexo.io/zh-cn/docs/github-pages">官方文档</a>，若你使用了一个带有 CNAME 的自定义域名，你需要在 source&#x2F; 文件夹中新增 CNAME 文件。<br>在Windows 平台下，使用ni命令创建空文件CNAME，并在该文件中写入域名。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">ni</span> CNAME<br><br>CNAME<br><span class="hljs-literal">--------</span><br>tentyou.top<br></code></pre></td></tr></table></figure><p>重新部署Hexo，问题解决。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Learning</category>
+      
+      <category>Open Source Project</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HEXO使用Git同步思路</title>
+    <link href="/2023/07/02/HEXO%E4%BD%BF%E7%94%A8Git%E5%90%8C%E6%AD%A5%E6%80%9D%E8%B7%AF/"/>
+    <url>/2023/07/02/HEXO%E4%BD%BF%E7%94%A8Git%E5%90%8C%E6%AD%A5%E6%80%9D%E8%B7%AF/</url>
+    
+    <content type="html"><![CDATA[<h1 id="分析Hexo文件目录"><a href="#分析Hexo文件目录" class="headerlink" title="分析Hexo文件目录"></a>分析Hexo文件目录</h1><p><img src="https://tentyou-typora-picbed.oss-cn-shanghai.aliyuncs.com/img/image-20230702205121861.png?x-oss-process=image/watermark,t_30,text_VGVudHlvdSdzIEJsb2c=,size_15,color_FFFFFF,shadow_20" alt="Files Tree"></p><p>Hexo的文件目录如上所示，使用Git上传Hexo的源文件到其他仓库或分支，使用Hexo内建命令将public文件部署到服务器，.gitignore忽略无需上传的文件。</p><h2 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹"></a>文件夹</h2><table><thead><tr><th>名称</th><th>来源</th><th>是否上传至远程Git仓库</th></tr></thead><tbody><tr><td>.deploy_git</td><td>推送至服务器时自动生成</td><td>否</td></tr><tr><td>.github</td><td>推送至服务器时自动生成</td><td>否</td></tr><tr><td>node_modules</td><td>npm依赖模块</td><td>否</td></tr><tr><td>public</td><td>推送至服务器的静态文件</td><td>否</td></tr><tr><td>scaffolds</td><td>文章模板</td><td>是</td></tr><tr><td>source</td><td>文章目录</td><td>是</td></tr><tr><td>themes</td><td>主题目录</td><td>可选（若主题采用npm安装则无需上传）</td></tr></tbody></table><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><table><thead><tr><th>名称</th><th>来源</th><th>是否上传至远程Git仓库</th></tr></thead><tbody><tr><td>_config.yml&#x2F; &amp; _config.*.yml</td><td>全局配置文件和主题配置文件</td><td>是</td></tr><tr><td>db.json</td><td>生成静态文件时产生的缓存文件</td><td>否</td></tr><tr><td>package-lock.json</td><td>npm依赖模块安装记录</td><td>是</td></tr><tr><td>package.json</td><td>npm依赖模块列表</td><td>是</td></tr></tbody></table><h1 id="编写-gitignore文件"><a href="#编写-gitignore文件" class="headerlink" title="编写.gitignore文件"></a>编写.gitignore文件</h1><ol><li>首先，将静态页面克隆至本地文件夹，删除.git文件夹。</li><li>将上两张表格中无需上传的文件写入.gitignore文件中。</li><li>推送至远程仓库&#x2F;分支。</li></ol><p>至此，源文件上传至远程Git仓库，其他设备配置Hexo环境后，将源文件远程仓库克隆至本地，安装npm依赖环境，即可开始使用Hexo。</p><h1 id="多设备注意事项"><a href="#多设备注意事项" class="headerlink" title="多设备注意事项"></a>多设备注意事项</h1><p>完成文章撰写后，使用hexo c命令，清理缓存文件，并将最新文件push至远程仓库，避免多设备本地版本冲突。</p><p><strong>强烈建议</strong>使用<strong>两个仓库</strong>分别存放源文件和静态页面文件，因为源文件的配置文件包含一些api配置的私钥，同步至公开仓库有数据安全风险，请将源文件放至<strong>私有仓库</strong>。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Learning</category>
+      
+      <category>Open Source Project</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
